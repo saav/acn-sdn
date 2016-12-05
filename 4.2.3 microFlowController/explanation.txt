@@ -1,0 +1,31 @@
+4.2.3 MAC Learning Switch via MicroFlow Rules
+
+a)
+It takes an average of 1.246ms to ping, which is at least a magnitude faster than both previous cases. 
+
+It took 29.6ms to ping the first packet. 
+However, for the second and subsequent packets it takes under 1ms. 
+Occasionally there will be pings way above 1ms, and this is due to the MicroFlow rule expiring and thus the switch has to ask the controller what to do with that packet. 
+
+It is clear to see that the MicroFlow rules significantly lower the ping times for the majority of the time. 
+
+b)
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> h2 h3 h4 h5
+h2 -> h1 h3 h4 h5
+h3 -> h1 h2 h4 h5
+h4 -> h1 h2 h3 h5
+h5 -> h1 h2 h3 h4
+*** Results: 0% dropped (20/20 received)
+
+All hosts are reachable from any other host. 
+
+c)
+Between hosts h1 and h2
+Results: ['7.91 Gbits/sec', '7.94 Gbits/sec']
+
+Between hosts h1 and h5
+Results: ['2.38 Gbits/sec', '2.39 Gbits/sec']
+
+Once again we can see that having more switches in between the hosts reduces throughput, however both the throughputs here are magnitudes larger than both previous cases. 

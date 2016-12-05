@@ -1,0 +1,30 @@
+4.2.1 Hub Controller
+
+a)
+It takes an average of 29.368ms to ping. 
+There is traffic on every host and switch, for each switch there is traffic on every port of the switch. 
+
+b)
+It takes an average of 34.855ms to ping. 
+There is around a 5ms difference, which is not a magnitude of difference. 
+
+c)
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> h2 h3 h4 h5
+h2 -> h1 h3 h4 h5
+h3 -> h1 h2 h4 h5
+h4 -> h1 h2 h3 h5
+h5 -> h1 h2 h3 h4
+*** Results: 0% dropped (20/20 received)
+
+All hosts are reachable from any other host. 
+
+d)
+Between hosts h1 and h2
+Results: ['15.8 Mbits/sec', '18.0 Mbits/sec']
+
+Between hosts h1 and h5
+Results: ['7.90 Mbits/sec', '8.38 Mbits/sec']
+
+Therefore we can see that having more switches in between the hosts reduces throughput. 

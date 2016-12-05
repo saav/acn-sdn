@@ -1,0 +1,24 @@
+4.2.2 Learning Controller
+
+a)
+It takes an average of 27.672ms to ping, which is very similar to the time it took for the Hub Controller. 
+It took 24.5ms to ping the first packet. 
+
+There is a big difference in terms of the amount of traffic observed on the network though. For the first ping, traffic is still observed on all the hosts and switches because the controller needs to learn which host is on which port of the switch. After that though, once the controller has stored the respective MAC to switch port relationships, only traffic on the required hosts and switches are observed. In this case, that means only traffic on h1, h2 and the 2 respective ports on s1 are observed. 
+
+Even though there is a drastic decrease in terms of overall network traffic, the time to ping still remains roughly the same. 
+
+b)
+Between h1 and h5, it takes an average of 41.059ms to ping. 
+Between h1 and h4, it takes an average of 37.062ms to ping. 
+
+So there is hardly any difference between the two results, which makes sense because h4 and h5 are both an equal amount of hops away from h1. 
+
+c)
+Between hosts h1 and h2
+Results: ['7.02 Mbits/sec', '7.65 Mbits/sec']
+
+Between hosts h1 and h5
+Results: ['3.56 Mbits/sec', '4.26 Mbits/sec']
+
+Once again we can see that having more switches in between the hosts reduces throughput. 
